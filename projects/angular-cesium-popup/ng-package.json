@@ -1,0 +1,16 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/angular-cesium-popup",
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "umdModuleIds": {
+      "angular-cesium": "0.0.72",
+      "cesium": "^1.89.0"
+    }
+  },
+  "assets": [
+    "./src/lib/popupStyle.less",
+    "../../node_modules/cesium/Build/Cesium/Widgets/widgets.css",
+    "../../node_modules/cesium/Build/Cesium/Cesium.js"
+  ]
+}

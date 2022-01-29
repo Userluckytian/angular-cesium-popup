@@ -1,0 +1,56 @@
+{
+  "name": "cesium-demo",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "aaa": "ng build angular-cesium-popup"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false,
+    "util": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ynqc/toast.git"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~12.0.3",
+    "@angular/common": "~12.0.3",
+    "@angular/compiler": "~12.0.3",
+    "@angular/core": "~12.0.3",
+    "@angular/forms": "~12.0.3",
+    "@angular/platform-browser": "~12.0.3",
+    "@angular/platform-browser-dynamic": "~12.0.3",
+    "@angular/router": "~12.0.3",
+    "angular-cesium": "0.0.72",
+    "angular-cesium-popup": "file:dist/angular-cesium-popup/angular-cesium-popup-0.0.1.tgz",
+    "cesium": "^1.89.0",
+    "crypto-browserify": "^3.12.0",
+    "rxjs": "~6.6.0",
+    "stream-browserify": "^3.0.0",
+    "tslib": "^2.1.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~12.0.3",
+    "@angular/cli": "~12.0.3",
+    "@angular/compiler-cli": "~12.0.3",
+    "@types/jasmine": "~3.6.0",
+    "@types/node": "^12.11.1",
+    "jasmine-core": "~3.7.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "ng-packagr": "^12.0.0",
+    "typescript": "~4.2.3"
+  }
+}

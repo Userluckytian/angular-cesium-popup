@@ -1,0 +1,164 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "fee7e5dc-ee33-4fda-86de-4b3b57957583"
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "cesiumDemo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "allowedCommonJsDependencies": [
+              "angular-slickgrid", "stream", "crypto"
+            ],
+            "outputPath": "dist/cesiumDemo",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "less",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "./node_modules/cesium/Build/Cesium",
+                "output": "./assets/cesium"
+              },
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "./node_modules/cesium/Build/Cesium/Widgets/widgets.css",
+              "src/styles.less"
+            ],
+            "scripts": [
+              "./node_modules/cesium/Build/Cesium/Cesium.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "cesiumDemo:build:production"
+            },
+            "development": {
+              "browserTarget": "cesiumDemo:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "cesiumDemo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "less",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "./node_modules/cesium/Build/Cesium",
+                "output": "./assets/cesium"
+              },
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "./node_modules/cesium/Build/Cesium/Widgets/widgets.css",
+              "src/styles.less"
+            ],
+            "scripts": [
+              "./node_modules/cesium/Build/Cesium/Cesium.js"
+            ]
+          }
+        }
+      }
+    },
+    "angular-cesium-popup": {
+      "projectType": "library",
+      "root": "projects/angular-cesium-popup",
+      "sourceRoot": "projects/angular-cesium-popup/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/angular-cesium-popup/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-cesium-popup/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/angular-cesium-popup/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-cesium-popup/src/test.ts",
+            "tsConfig": "projects/angular-cesium-popup/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-cesium-popup/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "cesiumDemo"
+}
