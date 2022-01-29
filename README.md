@@ -1,6 +1,6 @@
 # angular-cesium-popup
 
-封装了一个 cesium 的 popup 组件。
+封装了一个 cesium 的 popup 组件。[npm地址](https://www.npmjs.com/package/angular-cesium-popup)
 
 ## **使用方式**
 
