@@ -61,7 +61,7 @@ export class yourComponent {
 | `position` | `any` | `handler.setInputAction((event: any) => { position = this.viewer.scene.pickPosition(event.position);                 }, Cesium.ScreenSpaceEventType.LEFT_CLICK) // 左键点击事件` |
 
 ## **相关函数介绍**
-### **<table><tr><td bgcolor=#f8f8f8>$\color{#000000}{ComponentUtilService相关使用函数介绍:}$</td></tr></table>**
+### **<table><tr><td bgcolor=#f8f8f8>ComponentUtilService相关使用函数介绍:</td></tr></table>**
 `getComponentElement(components: Type<unknown>, params: { [key: string]: any })`: 获取组件Dom元素 
 
 `getComponentInstance()`: 获取组件实例
@@ -69,7 +69,7 @@ export class yourComponent {
 `setComponentGlobalVariable(variableName: string, value: any)`: 设置组件内部的"全局"变量
 
 `destroy()`: 销毁组件实例
-### **<table><tr><td bgcolor=#f8f8f8>$\color{#000000}{CesiumPopupService相关使用函数介绍:}$</td></tr></table>**
+### **<table><tr><td bgcolor=#f8f8f8>CesiumPopupService相关使用函数介绍:</td></tr></table>**
 
 `addClassName(className: string)`: 给popup的最外面的边框DOM元素增加一个class类
 
