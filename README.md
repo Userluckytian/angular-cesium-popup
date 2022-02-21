@@ -90,8 +90,7 @@ export class yourComponent {
 
 
 ## **参考图**
-
-![alt 参考图-1](https://obohe.com/i/2022/01/28/udemgn.jpg)
+[![alt 参考图-1](https://s4.ax1x.com/2022/02/21/HXgdTf.png)](https://imgtu.com/i/HXgdTf)
 
 ## **参考文献**
 文献1：[参考的github地址](https://github.com/JerckyLY/cesium-demo-view/tree/6108023ccb0207903a860f5dafffdf59cc2927ce)
